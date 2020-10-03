@@ -1,0 +1,23 @@
+.container {
+  margin: 0 auto;
+  padding: 0 31px;
+  @media screen and (min-width: 480px) {
+    width: $mobile;
+  }
+}
+
+.section {
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}

@@ -1,0 +1,114 @@
+.section-services-endless-bg-color {
+  background-color: $bgServices;
+}
+
+.section-services {
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: $mobile;
+
+  background-image: url(../images/services-bg-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 767px) and (min-device-pixel-ratio: 2),
+    screen and (max-width: 767px) and (min-resolution: 192dpi),
+    screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    background-image: url(../images/services-bg-mobile@2x.png);
+  }
+}
+
+.services {
+  text-align: center;
+}
+
+.services__description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  text-align: left;
+
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(9, 11, 320, 480);
+  }
+
+  color: $alternateTextColor;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 20px;
+    width: 60px;
+    height: 1px;
+
+    background: $dark;
+  }
+}
+
+.services__title {
+  margin-bottom: 44px;
+
+  text-align: left;
+
+  font-family: $headerFont;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 1.67;
+  letter-spacing: 0.05em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(32, 42, 320, 480);
+  }
+
+  color: $white;
+}
+
+.services__pricelist {
+  max-width: 418px;
+  padding: 30px;
+  margin-bottom: 50px;
+
+  font-family: $textFont;
+  font-size: 14px;
+  line-height: 2.14;
+  letter-spacing: 0.02em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(10, 14, 320, 480);
+  }
+
+  color: $secondaryTextColor;
+
+  background: linear-gradient(180deg, #171a24, rgba(23, 26, 36, 0.2));
+}
+
+.pricelist__item {
+  display: flex;
+  align-items: baseline;
+}
+
+.pricelist__underline {
+  flex-grow: 1;
+  height: 1px;
+  margin: 0 6px;
+
+  background-color: rgba(157, 164, 189, 0.12);
+}
+
+.services__online {
+  @extend %online-button-light;
+
+  color: $white;
+
+  @include twoTransitions(color, background-color);
+}

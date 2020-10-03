@@ -1,0 +1,125 @@
+<header class="page-header">
+  <!-- слайдер -->
+  <div class="background">
+    <div class="slider-wrapper">
+      <div class="slider">
+        <ul class="slider__list">
+          <li class="slider__item">
+            <picture>
+              <source
+                srcset="
+                  ./images/slider-3-mobile-480.webp 480w,
+                  ./images/slider-3-mobile-960.webp 960w
+                "
+                media="(max-width: 767px)"
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./images/slider-3-mobile-480.jpg 480w,
+                  ./images/slider-3-mobile-960.jpg 960w
+                "
+                media="(max-width: 767px)"
+              />
+              <img
+                class="slider__image"
+                src="./images/slider-3-mobile-480.jpg"
+                alt="barber-3"
+                sizes="(min-width: 1200px) 90vw, (min-width: 768px) 80vw,  100vw"
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- container -->
+  <div class="container">
+    <div class="header-nav">
+      <!-- логотип -->
+      <div class="logo" href="">
+        <svg width="69" height="56">
+          <use href="./images/svg-sprite.svg#icon-logo"></use>
+        </svg>
+      </div>
+
+      <!-- burger-menu button -->
+      <button
+        type="button"
+        class="burger-button"
+        aria-expanded="false"
+        aria-controls="menu-container"
+        data-menu-button
+      >
+        <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+          <use
+            class="burger-closed"
+            href="./images/svg-sprite.svg#icon-burger-open"
+          ></use>
+          <use
+            class="burger-opened"
+            href="./images/svg-sprite.svg#icon-burger-close"
+          ></use>
+        </svg>
+      </button>
+    </div>
+
+    <!-- site heading -->
+    <div class="heading">
+      <p class="heading__description">A hair salon for men in Kyiv</p>
+      <h1 class="heading__main">BarberShop</h1>
+      <p class="heading__about-us">
+        Мы эксперты в модных мужских стрижках. Работаем быстро, осторожно и со
+        вкусом.
+      </p>
+    </div>
+
+    <!-- backdrop -->
+    <div class="backdrop" data-menu>
+      <!-- burger menu -->
+      <div class="burger-wrapper">
+        <!-- navigation menu -->
+        <nav>
+          <ul class="nav-menu">
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="">О нас</a>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="">Услуги и цены</a>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="">Мастера</a>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- contact-us -->
+        <ul class="contact-us">
+          <li class="contact-us__item">
+            <a class="contact-us__tel" href="tel:+38 044 111 11 11"
+              >+38 044 111 11 11</a
+            >
+          </li>
+          <li class="contact-us__item">
+            <a class="contact-us__online" href="">онлайн-запись</a>
+          </li>
+        </ul>
+
+        <!-- follow-us -->
+        <ul class="follow-us">
+          <li class="follow-us__item">
+            <a class="follow-us__link follow-us__link--decorated" href=""
+              >Instagram</a
+            >
+          </li>
+          <li class="follow-us__item">
+            <a class="follow-us__link" href="">Youtube</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

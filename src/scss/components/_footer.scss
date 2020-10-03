@@ -1,0 +1,255 @@
+// online form
+
+.page-footer {
+  background-color: $bgFooter;
+
+  text-align: center;
+}
+
+.online-form__title {
+  margin-bottom: 44px;
+
+  font-family: $headerFont;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(30, 42, 320, 480);
+  }
+
+  color: $white;
+}
+
+.form-data {
+  margin-bottom: 44px;
+}
+
+.form-field__input {
+  display: block;
+  width: 100%;
+  padding-bottom: 8px;
+
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+
+  color: $white;
+
+  background-color: transparent;
+  border: transparent;
+  border-bottom: solid 1px $alternateTextColor;
+
+  &::placeholder {
+    text-transform: uppercase;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom: solid 1px $white;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: $white;
+  }
+}
+
+.form-field__input--comment {
+  height: 76px;
+  resize: none;
+}
+
+.form__button {
+  @extend %online-button-light;
+
+  padding: 12px 38px;
+
+  color: $white;
+  background-color: transparent;
+
+  @include twoTransitions(color, background-color);
+}
+
+// contacts
+
+.contacts {
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: $mobile;
+
+  background-image: url(../images/footer-bg-mobile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 767px) and (min-device-pixel-ratio: 2),
+    screen and (max-width: 767px) and (min-resolution: 192dpi),
+    screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    background-image: url(../images/footer-bg-mobile@2x.png);
+  }
+}
+
+.contacts__title {
+  margin-bottom: 40px;
+
+  font-family: $headerFont;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(34, 42, 320, 480);
+  }
+
+  color: $white;
+}
+
+.address {
+  margin-bottom: 44px;
+
+  text-align: left;
+}
+
+.address__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.address__icon {
+  margin-right: 16px;
+}
+
+.address__link {
+  display: flex;
+  align-items: center;
+
+  font-family: $textFont;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(13, 18, 320, 480);
+  }
+
+  color: $secondaryTextColor;
+}
+
+.address__link--underlined {
+  text-decoration: underline;
+}
+
+// working hours
+
+.working-hours {
+  text-align: left;
+}
+
+.working-hours__description {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: $white;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 20px;
+    width: 60px;
+    height: 1px;
+
+    background: $white;
+  }
+}
+
+.working-hours__data {
+  font-family: $textFont;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(13, 18, 320, 480);
+  }
+
+  color: $secondaryTextColor;
+}
+
+// socialmedia
+
+.footer-socialmedia {
+  padding: 44px 0;
+}
+
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-bottom: 20px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 40px;
+    width: 60px;
+    height: 1px;
+
+    background: $dark;
+  }
+}
+
+.social-list__item {
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.social-list__link {
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+
+  @media (max-width: ($mobile - 1)) {
+    font-size: calcFluidFontSize(9, 11, 320, 480);
+  }
+
+  color: $dark;
+}
+
+// copyright
+
+.copyright {
+  display: flex;
+  align-items: center;
+
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+
+  color: $secondaryTextColor;
+}
+
+.copyright__icon {
+  margin-right: 6px;
+}
