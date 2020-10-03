@@ -24,6 +24,24 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[path][name].[ext]',
+              limit: 8192,
+              esModule: false,
+            },
+          },
+          'img-loader',
+        ],
+      },
+      {
+        test: /\.(webp)$/i,
+        loaders: ['file-loader', 'webp-loader'],
+      },
     ],
   },
   plugins: [
