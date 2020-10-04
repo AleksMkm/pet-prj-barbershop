@@ -25,7 +25,7 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|webp)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -39,8 +39,9 @@ module.exports = {
         ],
       },
       {
-        test: /\.(webp)$/i,
-        loaders: ['file-loader', 'webp-loader'],
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
     ],
   },
