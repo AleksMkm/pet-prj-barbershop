@@ -2,24 +2,51 @@
   <!-- слайдер -->
   <div class="background">
     <div class="slider-wrapper">
+      <div class="slider-media">
+        <ul class="follow-us">
+          <li class="follow-us__item">
+            <a class="follow-us__link follow-us__link--decorated" href=""
+              >Instagram</a
+            >
+          </li>
+          <li class="follow-us__item">
+            <a class="follow-us__link" href="">Youtube</a>
+          </li>
+        </ul>
+      </div>
       <div class="slider">
         <ul class="slider__list">
           <li class="slider__item">
             <picture>
               <source
                 srcset="
+                  ../images/slider-3-tablet-609.webp   609w,
+                  ../images/slider-3-tablet-1218.webp 1218w
+                "
+                media="(min-width: 768px)"
+                type="image/webp"
+              />
+              <source
+                srcset="
                   ../images/slider-3-mobile-480.webp 480w,
                   ../images/slider-3-mobile-960.webp 960w
                 "
-                media="(max-width: 767px)"
+                media="(max-width: 768px)"
                 type="image/webp"
+              />
+              <source
+                srcset="
+                  ../images/slider-3-tablet-609.jpg   609w,
+                  ../images/slider-3-tablet-1218.jpg 1218w
+                "
+                media="(min-width: 768px)"
               />
               <source
                 srcset="
                   ../images/slider-3-mobile-480.jpg 480w,
                   ../images/slider-3-mobile-960.jpg 960w
                 "
-                media="(max-width: 767px)"
+                media="(max-width: 768px)"
               />
               <img
                 class="slider__image"
@@ -64,6 +91,39 @@
       </button>
     </div>
 
+    <!-- nav menu (main) -->
+    <div class="nav-main">
+      <!-- navigation menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="">О нас</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="">Услуги и цены</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="">Мастера</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- contact-us -->
+      <ul class="contact-us">
+        <li class="contact-us__item">
+          <a class="contact-us__tel" href="tel:+38 044 111 11 11"
+            >+38 044 111 11 11</a
+          >
+        </li>
+        <li class="contact-us__item">
+          <a class="contact-us__online" href="">онлайн-запись</a>
+        </li>
+      </ul>
+    </div>
+
     <!-- site heading -->
     <div class="heading">
       <p class="heading__description">A hair salon for men in Kyiv</p>
@@ -78,7 +138,7 @@
     <div class="backdrop" data-menu>
       <!-- burger menu -->
       <div class="burger-wrapper">
-        <!-- navigation menu -->
+        <!-- navigation menu (burger) -->
         <nav>
           <ul class="nav-menu">
             <li class="nav-menu__item">
@@ -96,7 +156,7 @@
           </ul>
         </nav>
 
-        <!-- contact-us -->
+        <!-- contact-us (burger) -->
         <ul class="contact-us">
           <li class="contact-us__item">
             <a class="contact-us__tel" href="tel:+38 044 111 11 11"
@@ -108,7 +168,7 @@
           </li>
         </ul>
 
-        <!-- follow-us -->
+        <!-- follow-us (burger) -->
         <ul class="follow-us">
           <li class="follow-us__item">
             <a class="follow-us__link follow-us__link--decorated" href=""

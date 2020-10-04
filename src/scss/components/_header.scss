@@ -4,6 +4,10 @@
   max-width: $mobile;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+  }
 }
 
 .slider-wrapper {
@@ -17,12 +21,19 @@
   z-index: 1;
 
   pointer-events: none;
+
+  @media screen and (min-width: $tablet) {
+    left: 159px;
+  }
 }
 
 .slider__image {
   max-width: 100%;
-  @media screen and (max-width: ($mobile - 1)) {
+  @media screen and (max-width: ($tablet - 1)) {
     height: 580px;
+  }
+  @media screen and (min-width: $tablet) and (max-width: ($desktop - 1)) {
+    height: 680px;
   }
   object-fit: cover;
 }
@@ -46,6 +57,12 @@
   top: 40px;
 
   color: $white;
+
+  @media screen and (min-width: $tablet) {
+    left: 11px;
+
+    color: $dark;
+  }
 }
 
 // burger - button
@@ -93,6 +110,11 @@
       right: calc(((100vw - 480px) / 2) + 31px);
     }
   }
+
+  // not visible after $tablet
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
 }
 
 // backdrop
@@ -119,6 +141,11 @@
       opacity: 1;
       pointer-events: initial;
     }
+  }
+
+  // not visible after $tablet
+  @media screen and (min-width: $tablet) {
+    display: none;
   }
 }
 
@@ -160,14 +187,47 @@
   }
 }
 
+// nav-main for tablet and desktop
+
+.nav-main {
+  @media screen and (max-width: ($tablet - 1)) {
+    display: none;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: 153px;
+  margin-left: 120px;
+  padding-left: 24px;
+  padding-top: 40px;
+
+  position: relative;
+  z-index: 2;
+}
+
 // navigation menu
 
 .nav-menu {
   margin-bottom: 64px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 0;
+    padding-top: 12px;
+  }
 }
 
 .nav-menu__item:not(:last-child) {
   margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+    margin-right: 24px;
+  }
 }
 
 .nav-menu__link {
@@ -189,16 +249,41 @@
   &:focus {
     color: $accentColor;
   }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: $white;
+  }
 }
 
 // contact-us
 
 .contact-us {
   margin-bottom: 64px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    margin-bottom: 0;
+  }
 }
 
 .contact-us__item:not(:last-child) {
   margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.contact-us__item:last-child {
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
 }
 
 .contact-us__tel {
@@ -220,28 +305,74 @@
   &:focus {
     color: $accentColor;
   }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 12px;
+    line-height: 1.33;
+
+    color: $white;
+  }
 }
 
 .contact-us__online {
   @extend %online-button-light;
-  padding-right: 37px;
-  padding-left: 37px;
 
   @media (max-width: ($mobile - 1)) {
     font-size: calcFluidFontSize(9, 12, 320, 480);
   }
 
   @include twoTransitions(color, background-color);
+
+  @media screen and (max-width: ($tablet - 1)) {
+    padding-right: 37px;
+    padding-left: 37px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    color: $white;
+  }
 }
 
 // follow-us
 
+.slider-media {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    height: 680px;
+
+    background-color: $white;
+  }
+}
+
 .follow-us {
   margin-left: 100px;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    margin-left: 0;
+    margin-top: 440px;
+
+    transform: rotate(-90deg);
+  }
 }
 
 .follow-us__item:not(:last-child) {
   margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
 }
 
 .follow-us__link {
@@ -253,6 +384,10 @@
 
   @media (max-width: ($mobile - 1)) {
     font-size: calcFluidFontSize(11, 14, 320, 480);
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 11px;
   }
 
   color: $dark;
@@ -277,6 +412,10 @@
     height: 1px;
 
     background: $dark;
+
+    @media screen and (min-width: $tablet) {
+      margin-left: -115px;
+    }
   }
 }
 
@@ -287,6 +426,12 @@
   padding-bottom: 185px;
   position: relative;
   z-index: 2;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 0;
+    padding-bottom: 245px;
+    padding-left: 240px;
+  }
 }
 
 .heading__description {
@@ -348,4 +493,8 @@
   }
 
   color: $secondaryTextColor;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 355px;
+  }
 }
