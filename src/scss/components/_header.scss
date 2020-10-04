@@ -38,6 +38,103 @@
   object-fit: cover;
 }
 
+// slider radio buttons
+
+.slider-radio {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+
+    position: absolute;
+    top: 325px;
+    right: 39px;
+
+    z-index: 3;
+  }
+}
+
+.slider-radio__item {
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.slider-radio__icon {
+  display: block;
+  width: 8px;
+  height: 2px;
+
+  margin-left: auto;
+
+  background-color: $secondaryTextColor;
+
+  .slider-radio__input:checked ~ & {
+    width: 18px;
+
+    background-color: $white;
+  }
+}
+
+// slider navigation buttons
+
+.slider-nav {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+
+    position: absolute;
+    top: 616px;
+    right: 39px;
+
+    z-index: 3;
+  }
+}
+
+.slider-nav__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.slider-nav__item {
+  &:not(:last-child) {
+    margin-right: 26px;
+  }
+}
+
+.slider-nav__btn {
+  display: block;
+
+  padding: 0;
+  padding-bottom: 8px;
+
+  font-family: $textFont;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $alternateTextColor;
+
+  color: $alternateTextColor;
+}
+
+.slider-nav__btn--prev {
+  padding-right: 22px;
+}
+
+.slider-nav__btn--next {
+  padding-left: 13px;
+}
+
+.slider-nav__btn--active {
+  color: $white;
+  border-bottom: 1px solid $white;
+}
+
 // bg gradient for the whole width
 
 .page-header {
@@ -430,7 +527,8 @@
   @media screen and (min-width: $tablet) {
     padding-top: 0;
     padding-bottom: 245px;
-    padding-left: 240px;
+    padding-left: 120px;
+    margin-left: 120px;
   }
 }
 
