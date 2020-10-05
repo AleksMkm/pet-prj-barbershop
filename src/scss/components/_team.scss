@@ -3,7 +3,7 @@
 }
 
 .team {
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet) and (max-width: ($desktop - 1)) {
     padding-right: 159px;
     padding-left: 159px;
   }
@@ -58,11 +58,24 @@
 .team-list {
   font-family: $textFont;
   text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
 }
 
 .team-list__item {
+  @media screen and (min-width: $desktop) {
+    width: calc(((100% - 60px)) / 3);
+  }
+
   &:not(:last-child) {
     margin-bottom: 64px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
   }
 }
 
