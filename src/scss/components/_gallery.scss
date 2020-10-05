@@ -28,11 +28,30 @@
   }
 
   color: $dark;
+
+  @media screen and (min-width: $tablet) {
+    line-height: 1.36;
+  }
+}
+
+.gallery {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .gallery__item {
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  @media screen and (max-width: ($tablet - 1)) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin: 15px;
+    width: calc((100% - 60px) / 2);
   }
 }
 
