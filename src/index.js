@@ -9,12 +9,12 @@ import { markupRefs } from './js/partials.js';
 const bodyEl = document.querySelector('body');
 
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.headerMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
+// bodyEl.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
 
 // бургер-меню
 

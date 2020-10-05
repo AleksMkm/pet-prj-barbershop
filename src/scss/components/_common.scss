@@ -9,6 +9,11 @@
     width: $tablet;
     padding: 0 39px;
   }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+    padding: 0 55px;
+  }
 }
 
 .section {
