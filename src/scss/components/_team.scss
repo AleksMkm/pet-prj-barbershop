@@ -2,6 +2,13 @@
   background-color: $bgSection;
 }
 
+.team {
+  @media screen and (min-width: $tablet) {
+    padding-right: 159px;
+    padding-left: 159px;
+  }
+}
+
 .team__description {
   display: flex;
   align-items: center;
