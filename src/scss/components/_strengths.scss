@@ -1,3 +1,11 @@
+.strengths {
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+}
+
 .strengths__description {
   display: flex;
   align-items: center;
@@ -76,6 +84,13 @@
 
   @media screen and (min-width: $tablet) {
     margin-left: 240px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 0px;
+    margin-right: 115px;
+
+    max-width: 400px;
   }
 }
 
