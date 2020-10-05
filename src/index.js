@@ -10,7 +10,7 @@ const bodyEl = document.querySelector('body');
 
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.headerMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
-// bodyEl.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
+bodyEl.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
 // bodyEl.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
 // bodyEl.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
 // bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
