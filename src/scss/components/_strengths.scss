@@ -57,6 +57,10 @@
   }
 
   color: $mainTextColor;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 500px;
+  }
 }
 
 .dashboard {
@@ -69,6 +73,10 @@
   text-align: center;
 
   color: $dark;
+
+  @media screen and (min-width: $tablet) {
+    margin-left: 240px;
+  }
 }
 
 .dashboard__item {
