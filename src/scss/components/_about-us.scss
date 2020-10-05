@@ -12,6 +12,10 @@
 
     min-width: 360px;
   }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 634px;
+  }
 }
 
 .about-us-img-list {
@@ -19,11 +23,22 @@
   flex-direction: column;
 
   margin-right: 30px;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+
+    margin-right: 64px;
+  }
 }
 
 .about-us-img-list__item {
   &:not(:last-child) {
     margin-bottom: 30px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
   }
 }
 
@@ -75,6 +90,11 @@
   }
 
   color: $dark;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 42px;
+    line-height: 1.17;
+  }
 }
 
 .about-us__call {
@@ -90,6 +110,11 @@
   }
 
   color: $mainTextColor;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 18px;
+    line-height: 1.67;
+  }
 }
 
 .about-us__text {
