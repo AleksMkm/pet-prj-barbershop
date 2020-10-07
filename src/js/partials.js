@@ -6,4 +6,5 @@ export const markupRefs = {
   teamMarkup: require('../partials/team.html'),
   galleryMarkup: require('../partials/gallery.html'),
   footerMarkup: require('../partials/footer.html'),
+  upBtnMarkup: require('../partials/up-btn.html'),
 };

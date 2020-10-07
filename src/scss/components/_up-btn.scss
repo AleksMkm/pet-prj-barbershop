@@ -1,0 +1,51 @@
+.up-btn-wrapper {
+  position: fixed;
+  bottom: 39px;
+  right: 10px;
+
+  z-index: 10;
+
+  @media screen and (min-width: $mobile) {
+    bottom: 39px;
+    right: calc(((100vw - 460px) / 2));
+  }
+
+  @media screen and (min-width: $tablet) {
+    bottom: 39px;
+    right: calc(((100vw - 748px) / 2));
+  }
+
+  @media screen and (min-width: $desktop) {
+    bottom: 55px;
+    right: calc(((100vw - 1250px) / 2));
+    // right: 20px;
+  }
+}
+
+.up-btn {
+  display: block;
+
+  color: $secondaryTextColor;
+
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+.up-btn__icon {
+  width: 40px;
+  height: 40px;
+
+  @media screen and (min-width: $tablet) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 80px;
+    height: 80px;
+  }
+}

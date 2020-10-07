@@ -15,6 +15,7 @@ bodyEl.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
+bodyEl.insertAdjacentHTML('beforeend', markupRefs.upBtnMarkup);
 
 // бургер-меню -открытие / закрытие меню
 
