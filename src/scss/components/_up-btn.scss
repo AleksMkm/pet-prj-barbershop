@@ -7,17 +7,17 @@
 
   @media screen and (min-width: $mobile) {
     bottom: 39px;
-    right: calc(((100vw - 460px) / 2));
+    right: calc(((100vw - 474px) / 2));
   }
 
   @media screen and (min-width: $tablet) {
     bottom: 39px;
-    right: calc(((100vw - 748px) / 2));
+    right: calc(((100vw - 768px) / 2));
   }
 
   @media screen and (min-width: $desktop) {
     bottom: 55px;
-    right: calc(((100vw - 1250px) / 2));
+    right: calc(((100vw - 1270px) / 2));
     // right: 20px;
   }
 }

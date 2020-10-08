@@ -1,19 +1,19 @@
-export function onBurgerClick(e) {
-  const bodyEl = document.querySelector('body');
-  const mobileMenuEl = document.querySelector('[data-menu]');
-  const expanded =
-    e.currentTarget.getAttribute('aria-expanded') === 'true' || false;
+export function onBurgerClick(bodyEl, backdropEl) {
+  return function onBurgerClick2(e) {
+    const expanded =
+      e.currentTarget.getAttribute('aria-expanded') === 'true' || false;
 
-  e.currentTarget.classList.toggle('is-open');
+    e.currentTarget.classList.toggle('is-open');
 
-  bodyEl.classList.toggle('body-hidden');
+    bodyEl.classList.toggle('body-hidden');
 
-  e.currentTarget.setAttribute('aria-expanded', !expanded);
+    e.currentTarget.setAttribute('aria-expanded', !expanded);
 
-  mobileMenuEl.classList.toggle('is-open');
+    backdropEl.classList.toggle('is-open');
 
-  // закрытие по клавише esc
-  onEscModalClose();
+    // закрытие по клавише esc
+    onEscModalClose();
+  };
 }
 
 // реализация закрытия по клавише esc

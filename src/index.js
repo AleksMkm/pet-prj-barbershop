@@ -1,10 +1,15 @@
 // подключение css
-
 import './scss/main.scss';
+// импорты
+import { markupRefs } from './js/partials.js';
+import {
+  onBurgerClick,
+  onBackdropClick,
+  onModalNavClick,
+  onModalOnlineClick,
+} from './js/burger-menu.js';
 
 // подключение разметки
-
-import { markupRefs } from './js/partials.js';
 
 const bodyEl = document.querySelector('body');
 
@@ -17,32 +22,29 @@ bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
 bodyEl.insertAdjacentHTML('beforeend', markupRefs.upBtnMarkup);
 
+// ссылки на узлы
+
+const refs = {
+  mobileMenuEl: document.querySelector('[data-menu]'),
+  menuBtnEl: document.querySelector('[data-menu-button]'),
+  modalNavEl: document.querySelector('[data-backdrop-nav]'),
+  modalOnlineEl: document.querySelector('[data-backdrop-online]'),
+};
+
 // бургер-меню -открытие / закрытие меню
 
-import { onBurgerClick } from './js/burger-menu.js';
-
-const menuBtnEl = document.querySelector('[data-menu-button]');
-
-menuBtnEl.addEventListener('click', onBurgerClick);
+refs.menuBtnEl.addEventListener(
+  'click',
+  onBurgerClick(bodyEl, refs.mobileMenuEl),
+);
 
 // закрытие бекдропа по клику в бекдроп
 
-import { onBackdropClick } from './js/burger-menu.js';
-
-const mobileMenuEl = document.querySelector('[data-menu]');
-
-mobileMenuEl.addEventListener('click', onBackdropClick);
+refs.mobileMenuEl.addEventListener('click', onBackdropClick);
 
 // закрытие бекдропа по клику в навигационные кнопки
 
-import { onModalNavClick } from './js/burger-menu.js';
+refs.modalNavEl.addEventListener('click', onModalNavClick);
+refs.modalOnlineEl.addEventListener('click', onModalOnlineClick);
 
-const modalNavEl = document.querySelector('[data-backdrop-nav]');
-
-modalNavEl.addEventListener('click', onModalNavClick);
-
-import { onModalOnlineClick } from './js/burger-menu.js';
-
-const modalOnlineEl = document.querySelector('[data-backdrop-online]');
-
-modalOnlineEl.addEventListener('click', onModalOnlineClick);
+// работа кнопки "вверх"
