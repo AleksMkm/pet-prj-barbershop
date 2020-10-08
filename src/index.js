@@ -9,6 +9,7 @@ import {
   onModalOnlineClick,
 } from './js/burger-menu.js';
 import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
+import { onImageLoad } from './js/image-load.js';
 
 // библиотеки
 const throttle = require('lodash.throttle');
@@ -34,6 +35,7 @@ const refs = {
   modalNavEl: document.querySelector('[data-backdrop-nav]'),
   modalOnlineEl: document.querySelector('[data-backdrop-online]'),
   upBtn: document.querySelector('[data-up-btn]'),
+  lazyImages: document.querySelectorAll('img[loading="lazy"]'),
 };
 
 // бургер-меню -открытие / закрытие меню
@@ -56,3 +58,13 @@ refs.modalOnlineEl.addEventListener('click', onModalOnlineClick);
 
 window.addEventListener('scroll', throttle(hideElOnScroll(refs.upBtn), 250));
 refs.upBtn.addEventListener('click', toPageTopOnClick);
+
+// анимация загрузки картинок
+
+refs.lazyImages.forEach(img => {
+  img.classList.add('img-not-loaded');
+});
+
+refs.lazyImages.forEach(img => {
+  img.addEventListener('load', onImageLoad, { once: true });
+});
