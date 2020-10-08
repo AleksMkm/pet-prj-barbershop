@@ -16,16 +16,14 @@ const throttle = require('lodash.throttle');
 
 // подключение разметки
 
-const bodyEl = document.querySelector('body');
-
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.headerMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
-bodyEl.insertAdjacentHTML('beforeend', markupRefs.upBtnMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.headerMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
+document.body.insertAdjacentHTML('beforeend', markupRefs.upBtnMarkup);
 
 // ссылки на узлы
 
@@ -42,7 +40,7 @@ const refs = {
 
 refs.menuBtnEl.addEventListener(
   'click',
-  onBurgerClick(bodyEl, refs.mobileMenuEl),
+  onBurgerClick(document.body, refs.mobileMenuEl),
 );
 
 // закрытие бекдропа по клику в бекдроп
@@ -68,3 +66,17 @@ refs.lazyImages.forEach(img => {
 refs.lazyImages.forEach(img => {
   img.addEventListener('load', onImageLoad, { once: true });
 });
+
+if ('loading' in HTMLImageElement.prototype) {
+  refs.lazyImages.forEach(img => {
+    img.src = img.dataset.src;
+  });
+} else {
+  const script = document.createElement('script');
+  script.src =
+    'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
+  script.integrity =
+    'sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==';
+  script.crossOrigin = 'anonymous';
+  document.body.appendChild('script');
+}
