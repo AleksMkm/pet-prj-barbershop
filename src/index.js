@@ -10,8 +10,11 @@ import {
 } from './js/burger-menu.js';
 import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
 import { onImageLoad } from './js/image-load.js';
+import { onSideSliderNavClick } from './js/slider.js';
 import teamListTemplate from './templates/team-card.hbs';
 import teammates from './JSON/team-members.json';
+import sliderTemplate from './templates/slider.hbs';
+import sliderData from './JSON/slider.json';
 
 // библиотеки
 const throttle = require('lodash.throttle');
@@ -36,11 +39,35 @@ const refs = {
   modalOnlineEl: document.querySelector('[data-backdrop-online]'),
   upBtn: document.querySelector('[data-up-btn]'),
   teamList: document.querySelector('#team-list'),
+  sliderList: document.querySelector('#slider-list'),
+  sliderRadioList: document.querySelector('#slider-radio'),
 };
 
 // добавление в разметку шаблонов
 const teamListMarkup = teamListTemplate(teammates);
 refs.teamList.insertAdjacentHTML('beforeend', teamListMarkup);
+
+const sliderMarkup = sliderTemplate(sliderData);
+refs.sliderList.insertAdjacentHTML('beforeend', sliderMarkup);
+
+// слайдер
+
+refs.sliderItems = document.querySelectorAll('[data-slider-item]');
+refs.sliderFirstItem = document.querySelector('.slide-1');
+refs.sliderSecondItem = document.querySelector('.slide-2');
+refs.sliderThirdItem = document.querySelector('.slide-3');
+
+refs.sliderFirstItem.classList.remove('visuallyhidden');
+
+refs.sliderRadioList.addEventListener(
+  'click',
+  onSideSliderNavClick(
+    refs.sliderFirstItem,
+    refs.sliderSecondItem,
+    refs.sliderThirdItem,
+    refs.sliderItems,
+  ),
+);
 
 // бургер-меню -открытие / закрытие меню
 

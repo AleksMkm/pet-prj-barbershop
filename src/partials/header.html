@@ -25,76 +25,19 @@
         </ul>
       </div>
       <div class="slider">
-        <ul class="slider__list">
-          <li class="slider__item">
-            <picture>
-              <source
-                srcset="
-                  ../images/slider-3-desktop-1125.webp 1125w,
-                  ../images/slider-3-desktop-2250.webp 2250w
-                "
-                media="(min-width: 1280px)"
-                type="image/webp"
-              />
-              <source
-                srcset="
-                  ../images/slider-3-tablet-609.webp   609w,
-                  ../images/slider-3-tablet-1218.webp 1218w
-                "
-                media="(min-width: 768px)"
-                type="image/webp"
-              />
-              <source
-                srcset="
-                  ../images/slider-3-mobile-480.webp 480w,
-                  ../images/slider-3-mobile-960.webp 960w
-                "
-                media="(max-width: 768px)"
-                type="image/webp"
-              />
-              <source
-                srcset="
-                  ../images/slider-3-desktop-1125.jpg 1125w,
-                  ../images/slider-3-desktop-2250.jpg 2250w
-                "
-                media="(min-width: 1280px)"
-              />
-              <source
-                srcset="
-                  ../images/slider-3-tablet-609.jpg   609w,
-                  ../images/slider-3-tablet-1218.jpg 1218w
-                "
-                media="(min-width: 768px)"
-              />
-              <source
-                srcset="
-                  ../images/slider-3-mobile-480.jpg 480w,
-                  ../images/slider-3-mobile-960.jpg 960w
-                "
-                media="(max-width: 768px)"
-              />
-              <img
-                class="slider__image"
-                src="../images/slider-3-mobile-480.jpg"
-                alt="barber-3"
-                sizes="(min-width: 1280px) 90vw, (min-width: 768px) 80vw,  100vw"
-              />
-            </picture>
-          </li>
-        </ul>
+        <ul class="slider__list" id="slider-list"></ul>
       </div>
       <form class="slider-radio">
         <div class="slider-radio__wrapper" role="group">
-          <ul class="slider-radio__list">
+          <ul class="slider-radio__list" id="slider-radio">
             <li class="slider-radio__item">
               <label class="slider-radio__label" for="first-slider-btn">
                 <input
                   type="radio"
                   name="slider-img"
                   value="slider-image1"
-                  class="slider-radio__input visuallyhidden slider-radio__first-slide"
-                  id="first-slider-btn" />
-                <span class="slider-radio__icon"></span
+                  class="slider-radio__input visuallyhidden slider-radio__first-slide" />
+                <span class="slider-radio__icon" data-slider-btn="first"></span
               ></label>
             </li>
             <li class="slider-radio__item">
@@ -103,9 +46,8 @@
                   type="radio"
                   name="slider-img"
                   value="slider-image2"
-                  class="slider-radio__input visuallyhidden slider-radio__second-slide"
-                  id="second-slider-btn" />
-                <span class="slider-radio__icon"></span
+                  class="slider-radio__input visuallyhidden slider-radio__second-slide" />
+                <span class="slider-radio__icon" data-slider-btn="second"></span
               ></label>
             </li>
             <li class="slider-radio__item">
@@ -114,9 +56,8 @@
                   type="radio"
                   name="slider-img"
                   value="slider-image3"
-                  class="slider-radio__input visuallyhidden slider-radio__third-slide"
-                  id="third-slider-btn" />
-                <span class="slider-radio__icon"></span
+                  class="slider-radio__input visuallyhidden slider-radio__third-slide" />
+                <span class="slider-radio__icon" data-slider-btn="third"></span
               ></label>
             </li>
           </ul>
