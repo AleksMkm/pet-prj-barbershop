@@ -5,6 +5,17 @@
 
   z-index: 10;
 
+  color: $secondaryTextColor;
+
+  cursor: pointer;
+
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+
   @media screen and (min-width: $mobile) {
     bottom: 39px;
     right: calc(((100vw - 474px) / 2));
@@ -19,19 +30,6 @@
     bottom: 55px;
     right: calc(((100vw - 1270px) / 2));
     // right: 20px;
-  }
-}
-
-.up-btn {
-  display: block;
-
-  color: $secondaryTextColor;
-
-  @include transition(color);
-
-  &:hover,
-  &:focus {
-    color: $accentColor;
   }
 }
 

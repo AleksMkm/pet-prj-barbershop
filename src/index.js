@@ -8,6 +8,7 @@ import {
   onModalNavClick,
   onModalOnlineClick,
 } from './js/burger-menu.js';
+import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
 
 // подключение разметки
 
@@ -29,6 +30,7 @@ const refs = {
   menuBtnEl: document.querySelector('[data-menu-button]'),
   modalNavEl: document.querySelector('[data-backdrop-nav]'),
   modalOnlineEl: document.querySelector('[data-backdrop-online]'),
+  upBtn: document.querySelector('[data-up-btn]'),
 };
 
 // бургер-меню -открытие / закрытие меню
@@ -48,3 +50,6 @@ refs.modalNavEl.addEventListener('click', onModalNavClick);
 refs.modalOnlineEl.addEventListener('click', onModalOnlineClick);
 
 // работа кнопки "вверх"
+
+window.addEventListener('scroll', hideElOnScroll(refs.upBtn));
+refs.upBtn.addEventListener('click', toPageTopOnClick);
