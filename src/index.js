@@ -1,6 +1,14 @@
 // подключение css
 import './scss/main.scss';
 // импорты
+import headerTemplate from './partials/header.hbs';
+import aboutUsTemplate from './partials/about-us.hbs';
+import servicesTemplate from './partials/services.hbs';
+import strengthsTemplate from './partials/strengths.hbs';
+import teamTemplate from './partials/team.hbs';
+import galleryTemplate from './partials/gallery.hbs';
+import footerTemplate from './partials/footer.hbs';
+import upBtnTemplate from './partials/up-btn.hbs';
 import { markupRefs } from './js/partials.js';
 import {
   onBurgerClick,
@@ -20,15 +28,23 @@ import sliderData from './JSON/slider.json';
 const throttle = require('lodash.throttle');
 
 // подключение разметки
+const headerMarkup = headerTemplate([{}]);
+const aboutUsMarkup = aboutUsTemplate([{}]);
+const servicesMarkup = servicesTemplate([{}]);
+const strengthsMarkup = strengthsTemplate([{}]);
+const teamMarkup = teamTemplate([{}]);
+const galleryMarkup = galleryTemplate([{}]);
+const footerMarkup = footerTemplate([{}]);
+const upBtnMarkup = upBtnTemplate([{}]);
 
-document.body.insertAdjacentHTML('beforeend', markupRefs.headerMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.aboutUsMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.servicesMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.strengthsMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.teamMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.galleryMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.footerMarkup);
-document.body.insertAdjacentHTML('beforeend', markupRefs.upBtnMarkup);
+document.body.insertAdjacentHTML('beforeend', headerMarkup);
+document.body.insertAdjacentHTML('beforeend', aboutUsMarkup);
+document.body.insertAdjacentHTML('beforeend', servicesMarkup);
+document.body.insertAdjacentHTML('beforeend', strengthsMarkup);
+document.body.insertAdjacentHTML('beforeend', teamMarkup);
+document.body.insertAdjacentHTML('beforeend', galleryMarkup);
+document.body.insertAdjacentHTML('beforeend', footerMarkup);
+document.body.insertAdjacentHTML('beforeend', upBtnMarkup);
 
 // ссылки на узлы
 
