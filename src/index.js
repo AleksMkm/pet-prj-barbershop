@@ -10,6 +10,8 @@ import {
 } from './js/burger-menu.js';
 import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
 import { onImageLoad } from './js/image-load.js';
+import teamListTemplate from './templates/team-card.hbs';
+import teammates from './JSON/team-members.json';
 
 // библиотеки
 const throttle = require('lodash.throttle');
@@ -33,8 +35,12 @@ const refs = {
   modalNavEl: document.querySelector('[data-backdrop-nav]'),
   modalOnlineEl: document.querySelector('[data-backdrop-online]'),
   upBtn: document.querySelector('[data-up-btn]'),
-  lazyImages: document.querySelectorAll('img[loading="lazy"]'),
+  teamList: document.querySelector('#team-list'),
 };
+
+// добавление в разметку шаблонов
+const teamListMarkup = teamListTemplate(teammates);
+refs.teamList.insertAdjacentHTML('beforeend', teamListMarkup);
 
 // бургер-меню -открытие / закрытие меню
 
@@ -58,6 +64,8 @@ window.addEventListener('scroll', throttle(hideElOnScroll(refs.upBtn), 250));
 refs.upBtn.addEventListener('click', toPageTopOnClick);
 
 // анимация загрузки картинок
+
+refs.lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
 refs.lazyImages.forEach(img => {
   img.classList.add('img-not-loaded');
