@@ -10,6 +10,9 @@ import {
 } from './js/burger-menu.js';
 import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
 
+// библиотеки
+const throttle = require('lodash.throttle');
+
 // подключение разметки
 
 const bodyEl = document.querySelector('body');
@@ -51,5 +54,5 @@ refs.modalOnlineEl.addEventListener('click', onModalOnlineClick);
 
 // работа кнопки "вверх"
 
-window.addEventListener('scroll', hideElOnScroll(refs.upBtn));
+window.addEventListener('scroll', throttle(hideElOnScroll(refs.upBtn), 250));
 refs.upBtn.addEventListener('click', toPageTopOnClick);
