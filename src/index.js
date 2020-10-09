@@ -9,7 +9,6 @@ import teamTemplate from './partials/team.hbs';
 import galleryTemplate from './partials/gallery.hbs';
 import footerTemplate from './partials/footer.hbs';
 import upBtnTemplate from './partials/up-btn.hbs';
-import { markupRefs } from './js/partials.js';
 import {
   onBurgerClick,
   onBackdropClick,
@@ -18,7 +17,7 @@ import {
 } from './js/burger-menu.js';
 import { hideElOnScroll, toPageTopOnClick } from './js/up-btn.js';
 import { onImageLoad } from './js/image-load.js';
-import { onSideSliderNavClick } from './js/slider.js';
+import { onSideSliderNavClick, onSliderBtnClick } from './js/slider.js';
 import teamListTemplate from './templates/team-card.hbs';
 import teammates from './JSON/team-members.json';
 import sliderTemplate from './templates/slider.hbs';
@@ -66,31 +65,25 @@ refs.teamList.insertAdjacentHTML('beforeend', teamListMarkup);
 const sliderMarkup = sliderTemplate(sliderData);
 refs.sliderList.insertAdjacentHTML('beforeend', sliderMarkup);
 
-// слайдер
+// слайдер -референсы и установка первого слайда открытым
 
-refs.sliderItems = document.querySelectorAll('[data-slider-item]');
 refs.sliderFirstItem = document.querySelector('.slide-1');
-refs.sliderSecondItem = document.querySelector('.slide-2');
-refs.sliderThirdItem = document.querySelector('.slide-3');
+refs.sliderBtnsList = document.querySelector('[data-slider-btns]');
 
-refs.sliderFirstItem.classList.remove('visuallyhidden');
+refs.sliderFirstItem.classList.replace('visuallyhidden', 'active-slide');
+document.querySelector('.slider-radio__first-slide').checked = true;
 
-refs.sliderRadioList.addEventListener(
-  'click',
-  onSideSliderNavClick(
-    refs.sliderFirstItem,
-    refs.sliderSecondItem,
-    refs.sliderThirdItem,
-    refs.sliderItems,
-  ),
-);
+// слайдер - переключение через радио-кнопки
+
+refs.sliderRadioList.addEventListener('click', onSideSliderNavClick);
+
+// слайдер - переключение кнопками назад и вперед (без сплошного пролистывания)
+
+refs.sliderBtnsList.addEventListener('click', onSliderBtnClick);
 
 // бургер-меню -открытие / закрытие меню
 
-refs.menuBtnEl.addEventListener(
-  'click',
-  onBurgerClick(document.body, refs.mobileMenuEl),
-);
+refs.menuBtnEl.addEventListener('click', onBurgerClick(refs.mobileMenuEl));
 
 // закрытие бекдропа по клику в бекдроп
 

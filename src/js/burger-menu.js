@@ -1,11 +1,11 @@
-export function onBurgerClick(bodyEl, backdropEl) {
+export function onBurgerClick(backdropEl) {
   return function onBurgerClick2(e) {
     const expanded =
       e.currentTarget.getAttribute('aria-expanded') === 'true' || false;
 
     e.currentTarget.classList.toggle('is-open');
 
-    bodyEl.classList.toggle('body-hidden');
+    document.body.classList.toggle('body-hidden');
 
     e.currentTarget.setAttribute('aria-expanded', !expanded);
 
@@ -29,13 +29,12 @@ function onEscKey(e) {
 }
 
 function onModalClose() {
-  const bodyEl = document.querySelector('body');
   const mobileMenuEl = document.querySelector('[data-menu]');
   const menuBtnEl = document.querySelector('[data-menu-button]');
 
   mobileMenuEl.classList.remove('is-open');
   menuBtnEl.classList.remove('is-open');
-  bodyEl.classList.remove('body-hidden');
+  document.body.classList.remove('body-hidden');
 
   window.removeEventListener('keydown', onEscKey);
 }

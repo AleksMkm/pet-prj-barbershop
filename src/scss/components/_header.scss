@@ -133,9 +133,16 @@
 
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid $alternateTextColor;
 
-  color: $alternateTextColor;
+  color: $white;
+  border-bottom: 1px solid $white;
+
+  @include twoTransitions(color, border-bottom);
+
+  &:disabled {
+    color: $alternateTextColor;
+    border-bottom: 1px solid $alternateTextColor;
+  }
 }
 
 .slider-nav__btn--prev {
@@ -144,11 +151,6 @@
 
 .slider-nav__btn--next {
   padding-left: 13px;
-}
-
-.slider-nav__btn--active {
-  color: $white;
-  border-bottom: 1px solid $white;
 }
 
 // bg gradient for the whole width
