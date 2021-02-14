@@ -1,6 +1,6 @@
 export function hideElOnScroll(el) {
   return function hideOnScroll(e) {
-    if (pageYOffset < document.documentElement.clientHeight) {
+    if (pageYOffset < document.documentElement.clientHeight - 100) {
       el.classList.add('visuallyhidden');
     } else {
       el.classList.remove('visuallyhidden');
@@ -9,5 +9,5 @@ export function hideElOnScroll(el) {
 }
 
 export function toPageTopOnClick(e) {
-  window.scrollTo(pageXOffset, 0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }

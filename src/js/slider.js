@@ -1,11 +1,14 @@
-export function onSideSliderNavClick(e) {
-  const sliderFirstItem = document.querySelector('.slide-1');
-  const sliderSecondItem = document.querySelector('.slide-2');
-  const sliderThirdItem = document.querySelector('.slide-3');
-  const sliderItems = document.querySelectorAll('[data-slider-item]');
-  const sliderBtnNext = document.querySelector('[data-slider-next]');
-  const sliderBtnPrev = document.querySelector('[data-slider-prev]');
+const sliderFirstItem = document.querySelector('.slide-1');
+const sliderSecondItem = document.querySelector('.slide-2');
+const sliderThirdItem = document.querySelector('.slide-3');
+const sliderItems = document.querySelectorAll('[data-slider-item]');
+const sliderBtnNext = document.querySelector('[data-slider-next]');
+const sliderBtnPrev = document.querySelector('[data-slider-prev]');
+const firstRadioBtn = document.querySelector('.slider-radio__first-slide');
+const secondRadioBtn = document.querySelector('.slider-radio__second-slide');
+const thirdRadioBtn = document.querySelector('.slider-radio__third-slide');
 
+export function onSideSliderNavClick(e) {
   if (e.target.nodeName !== 'SPAN') return;
 
   sliderItems.forEach(item => {
@@ -37,15 +40,7 @@ export function onSideSliderNavClick(e) {
 export function onSliderBtnClick(e) {
   if (e.target.nodeName !== 'BUTTON') return;
 
-  const sliderFirstItem = document.querySelector('.slide-1');
-  const sliderSecondItem = document.querySelector('.slide-2');
-  const sliderThirdItem = document.querySelector('.slide-3');
-  const sliderBtnNext = document.querySelector('[data-slider-next]');
-  const sliderBtnPrev = document.querySelector('[data-slider-prev]');
   const activeSlide = document.querySelector('.active-slide');
-  const firstRadioBtn = document.querySelector('.slider-radio__first-slide');
-  const secondRadioBtn = document.querySelector('.slider-radio__second-slide');
-  const thirdRadioBtn = document.querySelector('.slider-radio__third-slide');
   const nextActiveSlide = activeSlide.nextElementSibling;
   const prevActiveSlide = activeSlide.previousElementSibling;
 
